@@ -37,8 +37,7 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
   const { totalCompleted, totalPossible, percentage } = React.useMemo(() => {
     const monthStart = startOfMonth(currentDate);
     const monthEnd = endOfMonth(currentDate);
-    const daysInMonth = getDaysInMonth(currentDate);
-
+    
     if (habits.length === 0) {
       return { totalCompleted: 0, totalPossible: 0, percentage: 0 };
     }
@@ -71,8 +70,6 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
     return { totalCompleted: completedInMonth, totalPossible: possibleInMonth, percentage };
   }, [currentDate, habits, completionsByDay]);
 
-  const totalHabits = habits.length;
-
   const DayContent = ({ date }: { date: Date }) => {
     if (!isSameMonth(date, currentDate)) {
         return <div className="flex flex-col items-center justify-center w-full h-full rounded-md" />;
@@ -104,8 +101,9 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
         <span>{format(date, 'd')}</span>
         <div
           className={cn(
-            'mt-1 w-full h-4 rounded-sm flex items-center justify-center text-xs text-primary-foreground',
-            getBackgroundColor()
+            'mt-1 w-full h-6 rounded-sm flex items-center justify-center text-xs',
+            getBackgroundColor(),
+            completionPercentage > 0 && 'text-primary-foreground'
           )}
         >
           {habitsActiveOnDay > 0 && <span>{`${completedCount}/${habitsActiveOnDay}`}</span>}
@@ -130,9 +128,9 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
         components={{ DayContent }}
         className="rounded-md border p-0"
         classNames={{
-          day_cell: 'h-16 w-16 text-sm p-0',
+          day_cell: 'h-20 w-20 text-sm p-0',
           day: 'h-full w-full p-1 rounded-md',
-          head_cell: 'w-16',
+          head_cell: 'w-20',
           table: 'w-full border-collapse',
           caption: "flex justify-between items-center px-4 py-2",
           nav_button: "h-8 w-8",
