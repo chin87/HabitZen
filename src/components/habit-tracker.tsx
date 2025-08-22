@@ -69,10 +69,10 @@ export default function HabitTracker() {
         
         <Separator className="my-8" />
 
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold text-center mb-4 font-headline">Weekly Progress</h2>
-            <WeeklyHabitTracker habits={habits} onToggleCompletion={toggleHabitCompletion} />
+            <WeeklyHabitTracker habits={habits} />
           </div>
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
