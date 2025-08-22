@@ -7,6 +7,7 @@ import AddHabitDialog from './add-habit-dialog';
 import SuggestHabitsDialog from './suggest-habits-dialog';
 import HabitItem from './habit-item';
 import HabitCalendar from './habit-calendar';
+import WeeklyHabitTracker from './weekly-habit-tracker';
 import { Button } from './ui/button';
 import { LeafIcon } from './icons';
 import { Separator } from './ui/separator';
@@ -18,7 +19,7 @@ export default function HabitTracker() {
 
   return (
     <>
-      <div className="container mx-auto max-w-4xl p-4 md:p-8">
+      <div className="container mx-auto max-w-7xl p-4 md:p-8">
         <header className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-3">
             <LeafIcon className="h-10 w-10 text-primary" />
@@ -68,10 +69,16 @@ export default function HabitTracker() {
         
         <Separator className="my-8" />
 
-        <section>
-          <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
-          <div className="flex justify-center">
-            <HabitCalendar habits={habits} />
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl font-bold text-center mb-4 font-headline">Weekly Progress</h2>
+            <WeeklyHabitTracker habits={habits} onToggleCompletion={toggleHabitCompletion} />
+          </div>
+          <div className="lg:col-span-1">
+            <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
+            <div className="flex justify-center">
+              <HabitCalendar habits={habits} />
+            </div>
           </div>
         </section>
       </div>
