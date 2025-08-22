@@ -9,6 +9,7 @@ import HabitItem from './habit-item';
 import HabitCalendar from './habit-calendar';
 import { Button } from './ui/button';
 import { LeafIcon } from './icons';
+import { Separator } from './ui/separator';
 
 export default function HabitTracker() {
   const { habits, addHabit, deleteHabit, toggleHabitCompletion } = useHabits();
@@ -38,10 +39,6 @@ export default function HabitTracker() {
         </header>
 
         <section className="mb-8">
-          <HabitCalendar habits={habits} />
-        </section>
-
-        <section>
           {habits.length > 0 ? (
             <div className="space-y-4">
               {habits.map((habit) => (
@@ -67,6 +64,13 @@ export default function HabitTracker() {
               </Button>
             </div>
           )}
+        </section>
+        
+        <Separator className="my-8" />
+
+        <section>
+          <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
+          <HabitCalendar habits={habits} />
         </section>
       </div>
 
