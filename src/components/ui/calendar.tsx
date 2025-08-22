@@ -2,12 +2,12 @@
 
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+import { DayPicker, DayPickerProps, DayContentProps } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = DayPickerProps
 
 function Calendar({
   className,
@@ -60,6 +60,9 @@ function Calendar({
         IconRight: ({ className, ...props }) => (
           <ChevronRight className={cn("h-4 w-4", className)} {...props} />
         ),
+        DayContent: (props: DayContentProps) => {
+          return <div className="relative flex h-full w-full items-center justify-center">{props.date.getDate()}</div>;
+        },
       }}
       {...props}
     />

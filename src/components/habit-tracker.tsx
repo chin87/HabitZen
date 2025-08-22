@@ -6,6 +6,7 @@ import useHabits from '@/lib/hooks/use-habits';
 import AddHabitDialog from './add-habit-dialog';
 import SuggestHabitsDialog from './suggest-habits-dialog';
 import HabitItem from './habit-item';
+import HabitCalendar from './habit-calendar';
 import { Button } from './ui/button';
 import { LeafIcon } from './icons';
 
@@ -35,6 +36,10 @@ export default function HabitTracker() {
             </Button>
           </div>
         </header>
+
+        <section className="mb-8">
+          <HabitCalendar habits={habits} />
+        </section>
 
         <section>
           {habits.length > 0 ? (
