@@ -2,6 +2,8 @@
 
 HabitZen is a modern, beautifully designed habit tracking application built with Next.js, TypeScript, and Tailwind CSS. It leverages the power of Genkit to provide AI-powered habit suggestions, helping you build consistent routines and achieve your goals.
 
+Read more about the journey of building this app in this [Medium article](https://medium.com/@chin1987/level-up-your-life-the-vibe-way-introducing-my-habit-building-app-a71494538292).
+
 ## Features
 
 - **Intuitive Habit Management:** Easily add, delete, and track your daily habits.
