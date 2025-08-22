@@ -126,7 +126,7 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
         onMonthChange={setCurrentDate}
         weekStartsOn={1}
         components={{ DayContent }}
-        className="rounded-md border p-0"
+        className="p-0"
         classNames={{
           day_cell: 'h-20 w-20 text-sm p-0',
           day: 'h-full w-full p-1 rounded-md',

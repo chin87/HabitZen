@@ -11,6 +11,7 @@ import WeeklyHabitTracker from './weekly-habit-tracker';
 import { Button } from './ui/button';
 import { LeafIcon } from './icons';
 import { Separator } from './ui/separator';
+import { Card } from './ui/card';
 
 export default function HabitTracker() {
   const { habits, addHabit, deleteHabit, toggleHabitCompletion } = useHabits();
@@ -76,9 +77,9 @@ export default function HabitTracker() {
           </div>
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
-            <div className="flex justify-center">
+             <Card className="p-4">
               <HabitCalendar habits={habits} />
-            </div>
+            </Card>
           </div>
         </section>
       </div>
