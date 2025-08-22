@@ -70,7 +70,9 @@ export default function HabitTracker() {
 
         <section>
           <h2 className="text-2xl font-bold text-center mb-4 font-headline">Monthly Progress</h2>
-          <HabitCalendar habits={habits} />
+          <div className="flex justify-center">
+            <HabitCalendar habits={habits} />
+          </div>
         </section>
       </div>
 

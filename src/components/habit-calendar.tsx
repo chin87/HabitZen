@@ -115,7 +115,7 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center">
         <div className="w-full max-w-md mb-4">
             <div className="flex justify-between items-center mb-1">
                 <span className="text-sm font-medium text-muted-foreground">Monthly Score</span>
