@@ -132,10 +132,11 @@ export default function HabitCalendar({ habits }: HabitCalendarProps) {
           day: 'h-full w-full p-1 rounded-md',
           head_cell: 'w-20',
           table: 'w-full border-collapse',
-          caption: "flex justify-between items-center px-4 py-2",
-          nav_button: "h-8 w-8",
-          months: "w-full",
-          month: "w-full space-y-2",
+          caption: 'flex justify-center items-center relative px-4 py-2',
+          nav_button_previous: 'absolute left-1',
+          nav_button_next: 'absolute right-1',
+          months: 'w-full',
+          month: 'w-full space-y-2',
         }}
       />
     </div>
