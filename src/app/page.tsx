@@ -1,3 +1,9 @@
+import HabitTracker from '@/components/habit-tracker';
+
 export default function Home() {
-  return <></>;
+  return (
+    <main className="min-h-screen">
+      <HabitTracker />
+    </main>
+  );
 }
